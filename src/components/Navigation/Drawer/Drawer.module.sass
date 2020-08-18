@@ -1,0 +1,43 @@
+.Drawer
+  position: fixed
+  left: 0
+  top: 0
+  bottom: 0
+  width: 80%
+  max-width: 300px
+  padding: 20px 10px
+  box-sizing: border-box
+  transform: translateX(0px)
+  background: white
+  transition: transform .22s ease-in
+  z-index: 90
+  &.close
+    transform: translateX(-300px)
+  ul
+    margin: 0
+    padding: 0
+    list-style: none
+    li
+      margin-bottom: 15px
+      a
+        color: #1b396b
+        font-size: 22px
+        text-decoration: none
+        background-color: white
+        position: relative
+        padding: 0 20px 10px 20px
+        transition: opacity.3s
+        &:hover
+          color: #ed5900
+
+
+.Drawer ul li a:hover, .active
+  color: #ed5900
+  opacity: .7
+
+.NavHeader
+  display: flex
+  justify-content: space-between
+  padding: 10px 20px
+  color: #ed5900
+  letter-spacing: 2px

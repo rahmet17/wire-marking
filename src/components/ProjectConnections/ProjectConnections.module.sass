@@ -1,0 +1,73 @@
+h1
+  text-align: center
+  font-size: 18px
+
+.ProjectConnections
+  a
+    text-decoration: none
+    color: black
+  ul
+    list-style: none
+    width: 300px
+    margin: 0 auto
+    padding: 0
+
+.gridContainer
+  display: grid
+  grid-template-areas: 'sourceTarget sourceTarget sourceTarget sourceTarget' 'targetSource targetSource targetSource targetSource' 'colorNumber colorNumber markType completeBlock' 'crossSectionalArea crossSectionalArea markType completeBlock'
+  padding: 0
+  margin: 15px 0
+  border-radius: 5px
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, .5)
+  background: linear-gradient(0deg, rgba(206, 242, 250, 0.4) 0%, rgba(27,57,107, 0.7) 85%)
+  text-align: center
+  color: white
+  letter-spacing: 1px
+  > div
+    text-align: center
+
+.TitleData
+  font-size: 12px
+  padding: 5px
+  font-weight: normal
+
+.DescriptionData
+  font-size: 20px
+
+.sourceTarget
+  grid-area: sourceTarget
+  font-weight: bold
+
+.crossSectionalArea
+  grid-area: crossSectionalArea
+  font-weight: bold
+  align-self: center
+
+.targetSource
+  grid-area: targetSource
+  border-bottom: 1px solid white
+  font-weight: bold
+.markType
+  grid-area: markType
+  background: white
+  img
+    background-size: cover
+    width: 48px
+    height: 48px
+
+.colorNumber
+  grid-area: colorNumber
+  font-weight: bold
+  align-self: center
+
+.completeBlock
+  grid-area: completeBlock
+  align-self: center
+  background: rgba(0, 206, 0, 0.6)
+  color: white
+  font-weight: bold
+  font-size: 14px
+
+p
+  padding: 0
+  margin: 0
