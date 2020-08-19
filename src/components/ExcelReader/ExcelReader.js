@@ -94,22 +94,22 @@ class ExcelReader extends Component {
                         ? <Loader
                             marginTop={'50px'}
                         />
-                        : <div>
+                        : <>
                             <label htmlFor="file">Загрузите новый проект</label>
-                            <br/>
+
                             <input
                                 type="file"
                                 className="form-control"
                                 id="file"
                                 onChange={this.handleChange}/>
-                            <br/>
+
                             <button className={classes.submitButton}
                                     onClick={() => {
                                         if (this.state.isFileInHandler)
                                             this.handleFile()
                                     }}><i className="fa fa-upload"/>Загрузить
                             </button>
-                        </div>
+                        </>
                 }
             </div>
         )

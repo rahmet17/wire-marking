@@ -37,7 +37,7 @@ class ProjectList extends Component {
     }
 
     renderProjects() {
-        if (this.props.projects.length !== 0) {
+        if (this.props.projects !== null && this.props.projects.length !== 0) {
             return this.props.projectsList.map((project, index) => {
                 let pathToProject = 'project/' + project.id
                 return (
@@ -46,10 +46,9 @@ class ProjectList extends Component {
                             to={pathToProject}>
                             {project.name}
                         </NavLink>
-                        <br/>
                         <button onClick={() => {
                             return this.exportReportToXLSX(project.id)
-                        }}><i className={"fa fa-exchange"}/> Export report to .xlsx
+                        }}><i className={"fa fa-exchange"}/> Export to .xlsx
                         </button>
                     </li>
 
@@ -68,13 +67,13 @@ class ProjectList extends Component {
     render() {
         return (
             <div className={classes.ProjectList}>
-                <h1>Все проекты</h1>
+                <h2>Все проекты</h2>
                 {
                     this.props.isLoading
                         ? <Loader
                             marginTop={'50px'}
                         />
-                        : <div className={classes.ProjectContainer}>
+                        : <div className={classes.ProjectsContainer}>
                             <ul>
                                 {this.renderProjects()}
                             </ul>
