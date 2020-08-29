@@ -1,3 +1,5 @@
+@import "../../../index"
+
 .Drawer
   position: fixed
   left: 0
@@ -20,7 +22,7 @@
     li
       margin-bottom: 15px
       a
-        color: #1b396b
+        color: $blue-company
         font-size: 22px
         text-decoration: none
         background-color: white
@@ -28,14 +30,14 @@
         padding: 0 20px 10px 20px
         transition: opacity.3s
         &:hover
-          color: #ed5900
+          color: $orange-company
 
 
 .Drawer ul li a:hover, .active
-  color: #ed5900
+  color: $orange-company
   opacity: .7
 
 .NavHeader
-  color: #ed5900
+  color: $orange-company
   letter-spacing: 2px
   padding-left: 20px

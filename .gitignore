@@ -22,7 +22,6 @@
 firebase.json
 package-lock.json
 /.idea/
-/src/firebase/
 /.firebase
 
 npm-debug.log*
