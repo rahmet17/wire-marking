@@ -3,5 +3,5 @@
 #### `npm install`
 #### `npm run start`
 
-https://wiremarking.web.app/ <br/>
+https://wire-mark.web.app <br/>
 Данные для тестовой авторизации предоставляются по запросу
