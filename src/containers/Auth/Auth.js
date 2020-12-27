@@ -53,6 +53,13 @@ class Auth extends React.Component {
                             <label htmlFor="">password</label>
                             <input type="password" value={this.state.password} onChange={this.handleChangePassword}/>
 
+                            <span className={classes.ErrorType}>{
+                                this.props.authError !== null
+                                    ? this.props.authError.response.data.error.message
+                                    : ""
+                            }
+                            </span>
+
                             <button onClick={this.loginHandler}>Войти</button>
                         </form>
                 }
@@ -63,7 +70,8 @@ class Auth extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        isLoading: state.projects.isLoading
+        isLoading: state.projects.isLoading,
+        authError: state.auth.authError
     }
 }
 

@@ -1,11 +1,10 @@
 import axios from "axios";
 import {firebaseConfig} from "../../firebase/firebase-config";
-import {AUTH_LOGOUT, AUTH_SUCCESS} from "./actionTypes";
-import {getProjectsStart} from "./project";
+import {AUTH_ERROR, AUTH_LOGOUT, AUTH_SUCCESS} from "./actionTypes";
+
 
 export function auth(email, password) {
     return async dispatch => {
-        dispatch(getProjectsStart())
         const authData = {
             email,
             password,
@@ -23,10 +22,9 @@ export function auth(email, password) {
 
             dispatch(authSuccess(data.idToken))
             dispatch(autoLogout(data.expiresIn))
-
         }
         catch (e) {
-            console.log(e)
+            dispatch(authError(e))
         }
     }
 }
@@ -35,6 +33,13 @@ export function authSuccess(token) {
     return {
         type: AUTH_SUCCESS,
         token
+    }
+}
+
+export function authError(error) {
+    return {
+        type: AUTH_ERROR,
+        error
     }
 }
 
