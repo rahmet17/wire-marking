@@ -10,7 +10,8 @@ import {
     POST_PROJECT_START, POST_PROJECT_SUCCESS,
     RESET_COMPLETE_DATE_AUTHOR,
     RESET_MARKTYPE,
-    SWITCH_TO_ACTIVE_CONNECTION
+    SWITCH_TO_ACTIVE_CONNECTION,
+    CHANGE_SELECT_COLOR_CROSS
 } from "../actions/actionTypes";
 
 const initialState = {
@@ -25,7 +26,8 @@ const initialState = {
     isFirstRole: true,
     isActiveConnectionShow: false,
     completeAuthor: null,
-    completeDate: null
+    completeDate: null,
+    selectColorCrossValue: null
 }
 
 export default function projectReducer(state = initialState, action){
@@ -92,7 +94,6 @@ export default function projectReducer(state = initialState, action){
                 completeDate: null,
                 completeAuthor: null
             }
-
         case POST_PROJECT_START:
             return {
                 ...state,
@@ -102,6 +103,11 @@ export default function projectReducer(state = initialState, action){
             return {
                 ...state,
                 isUploadingProject: false
+            }
+        case CHANGE_SELECT_COLOR_CROSS:
+            return {
+                ...state,
+                selectColorCrossValue: action.value
             }
         default:
             return state

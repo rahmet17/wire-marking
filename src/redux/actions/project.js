@@ -13,7 +13,8 @@ import {
     POST_PROJECT_SUCCESS,
     RESET_COMPLETE_DATE_AUTHOR,
     RESET_MARKTYPE,
-    SWITCH_TO_ACTIVE_CONNECTION
+    SWITCH_TO_ACTIVE_CONNECTION,
+    CHANGE_SELECT_COLOR_CROSS
 } from "./actionTypes";
 
 export function getProjects() {
@@ -188,5 +189,12 @@ export function uploadProject(project){
         catch (e) {
             dispatch(getProjectsError(e))
         }
+    }
+}
+
+export function onChangeSelect(value){
+    return {
+        type: CHANGE_SELECT_COLOR_CROSS,
+        value
     }
 }
